@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int size;
+    cin>>size;
+    int arr[size];
+    for(int i = 0 ; i<size ; i++)
+    {
+      cin>> arr[i];}
+      int kth;
+      cin>>kth;
+
+
+    vector<int>ans;
+    // 2nd smallest
+    int max;
+    for(int i = 0; i<k ; i++)
+    {   max = 0 ;
+        for(int j = 0 ;  j < size ; j++){
+            if(max<=arr[j])
+            {
+                max = arr[j];
+            }
+        }
+        for(int k = 0 ; k < size ; k++ )
+        {
+            if(max==arr[k]){
+                arr[k]=0;
+                break;
+            }
+        }
+        if(i == 1)
+        {
+            cout<<max;
+            break;
+        }       
+    }
+    // return 0;
+}
+   
+
