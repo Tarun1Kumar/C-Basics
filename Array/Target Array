@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int* createTargetArray(int* nums, int* index, int numsSize, int* returnSize) {
+    int* target = (int*)malloc(numsSize * sizeof(int)); // Allocate memory for target array
+    *returnSize = numsSize; // Set the returnSize value
+
+    for (int i = 0; i < numsSize; i++) {
+        int idx = index[i];
+        // Shift elements to the right starting from idx to create space for the new element
+        for (int j = numsSize - 1; j > idx; j--) {
+            target[j] = target[j - 1];
+        }
+        target[idx] = nums[i]; // Insert the value at the specified index
+    }
+
+    return target;
+}
+
+int main() {
+   int size;
+   cin>>size;
+   int nums[size];
+   for(int i=0;i<size;i++){
+    cin>>nums[i];
+   }
+   int index[size];
+    for(int i=0;i<size;i++){
+    cin>>index[i];
+   }
+
+    int numsSize = size;
+    int returnSize;
+
+    int* target = createTargetArray(nums, index, numsSize, &returnSize);
+
+    printf("Target Array: ");
+    for (int i = 0; i < returnSize; i++) {
+        printf("%d ", target[i]);
+    }
+    printf("\n");
+
+    free(target); // Free the allocated memory
+
+    return 0;
+}
