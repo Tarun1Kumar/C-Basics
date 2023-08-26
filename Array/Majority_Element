@@ -1,0 +1,63 @@
+// by moose voting algo
+#include<iostream>
+using namespace std;
+
+int majority(int arr[],int size)
+{    
+    int count  = 0 ;
+    int ele;
+
+    for( int i = 0 ; i<size ; i++ )
+    {   
+        if(count == 0)
+        {
+            count=1;
+            ele = arr[i];
+
+        }
+        else if(ele == arr[i])
+        {
+            count++;
+
+        }
+        else{
+            count--;
+        }
+
+    }
+    int l = 0;
+    for(int i  = 0 ; i<size ; i++  )
+    {  
+         if(ele = arr[i])
+         {
+                l++;
+         }
+         if(l > (size/2))
+         {
+            return ele;
+         }
+
+    }
+    return -1;
+     
+
+}
+
+int main()
+{ 
+    int size;
+    cin>>size;
+    int arr[size];
+    for(int i = 0 ; i<size ; i++ )
+    {
+        cin>>arr[i];
+    }
+
+    int ans  = majority(arr,size);
+
+    cout<<ans<<endl; 
+
+    return 0;
+
+
+}
