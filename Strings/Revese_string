@@ -1,0 +1,25 @@
+ string reverseWord(string str)
+    {
+        // Your code goes here
+        int len = str.size();
+        int start = 0;
+        int end = len - 1;
+        
+        char str1[end];
+        for(int i  =0 ;i<len;i++)
+        {
+            str1[i] = str[i];
+        }
+        str1[len] = NULL;
+        
+        for( int i  = 0 ; i<(len/2) ;i++ )
+        {     
+            char c = str[i];
+            str1[end] = c;
+            str1[start++] = str[end--];
+            
+        }
+        
+        
+        return str1;
+    }
