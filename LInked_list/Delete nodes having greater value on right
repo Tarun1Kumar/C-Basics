@@ -1,0 +1,51 @@
+    Node *reverseLL(Node *root)
+    {
+        Node *next = NULL;
+        Node *prev  =NULL;
+        Node *cur = root;
+        while(cur != NULL)
+        {
+            next = cur->next;
+            cur->next = prev;
+            prev = cur;
+            cur = next;
+        }
+        
+          return prev;
+        
+    }
+    
+    
+    
+    
+    Node *compute(Node *head)
+    {
+        head = reverseLL(head);
+        Node *cur = head;
+        int maxi = head->data;
+        
+        Node *prev = head;
+        head =  head->next;
+        
+        while(head)
+        {
+            if(head->data >= maxi)
+            {   maxi = head->data;
+                prev = head;
+                head = head->next;
+                
+            }
+            else
+            {
+                prev->next = head->next;
+                head = prev->next;
+            }
+            
+        }
+        
+        head = reverseLL(cur);
+     
+        return head;
+       
+    }
+    
