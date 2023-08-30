@@ -1,0 +1,8 @@
+// formula
+int missingNumber(vector<int>& array, int n) 
+    {
+        int arr_sum = accumulate(array.begin(), array.end(), 0);
+        int sum_from_one_to_n = n * (n + 1) / 2; 
+        
+        return (sum_from_one_to_n - arr_sum);
+    }
