@@ -1,0 +1,31 @@
+   bool isPalindrome(Node *head)
+    {
+        //Your code here
+        if(!head) return 0;
+        Node *temp = head;
+        Node *cpy = head;
+        int counter = 0;
+        while(temp!=NULL)
+        {   counter++;
+            temp = temp->next;
+        }
+        int arr[counter];
+        int start=0;
+        while(cpy!=NULL)
+        {
+            arr[start++] = cpy->data;
+            cpy = cpy->next;
+        }
+        int len = counter;
+        int begin = 0; 
+        int end = len-1;
+        int flg = 0;
+        for(int i = 0 ; i < len/2 ; i++ )
+        {
+             if(arr[begin++] != arr[end--])
+             {
+                 return false;
+             }
+        }
+        return true;
+    }
