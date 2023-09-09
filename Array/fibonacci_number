@@ -1,0 +1,22 @@
+#include<iostream>
+
+int main()
+{
+   int num;
+   cin>>num;
+   int sum1 =0;
+   int sum2=1;
+   int sum3=0;
+   for(int i=2; i<num ; i++)
+   {
+     sum3 = sum1+sum2;
+     sum1=sum2;
+     sum2 = sum3;
+    }
+
+  cout<<sum3<<endl;
+
+  return 0;
+  
+   
+}
