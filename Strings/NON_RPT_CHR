@@ -1,0 +1,20 @@
+ unordered_map<char,int>m;
+       int len=s.size();
+       for(int i=0; i<len ; i++)
+       {
+           m[s[i]]++;
+       }
+       char a='&';
+       int flg=0;
+      for(int i=0; i<len ; i++)
+      
+      {
+          if(m[s[i]]==1)
+          {
+              return s[i];
+          }
+      }
+      
+       return'$';
+       
+    }
